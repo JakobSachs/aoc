@@ -1,4 +1,4 @@
-using BenchmarkTools, Random, ProfileView, Profile
+using BenchmarkTools
 
 # benchmark day 1
 include("./advent-1.jl")
