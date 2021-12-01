@@ -1,26 +1,23 @@
-measurements = parse.(Int32,readlines("input_day1.txt"))
+function count_increases(arr::Vector{Int32})
+  count::UInt32 = 0
 
-global inc_measurement = 0
-
-for i in 2:length(measurements)
-  if measurements[i] > measurements[i-1]
-      global inc_measurement +=  1
+  for i in 2:length(arr)
+    if arr[i] > arr[i-1]
+      count += 1
+    end
   end
+
+  return count
 end
+
+measurements = parse.(Int32,readlines("input_day1.txt"))
+inc_measurement = count_increases(measurements)
 
 println("$inc_measurement measurements are larger then the previous measurement")
 
-global sums = []
-
-for i in 1:length(measurements)-2
-  append!(sums,measurements[i]+measurements[i+1]+measurements[i+2])
-end
-
-global inc_sum = 0
-for i in 2:length(sums)
-    if sums[i] > sums[i-1]
-        global inc_sum +=  1
-    end
-end
+sums = [sum(measurements[i:i+2]) for i in 1:length(measurements)-2]
+inc_sum = count_increases(sums)
 
 println("$inc_sum sums are larger then the previous sum")
+
+
