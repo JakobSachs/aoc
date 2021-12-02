@@ -7,5 +7,6 @@ Anyone that wants to  can join this private leaderboard : `1597512-c0dd3e93`
 | Day 📅| Time⏳ | Memory 💾 |
 | --- | ---- | ------ |
 |  1  | 514.300 μs | 334.08 KiB | 
+|  2  | 287.400 μs | 91.80 KiB | 
 
 (Measured using `BenchmarkTools.@benchmark`)
