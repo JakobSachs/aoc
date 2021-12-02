@@ -3,19 +3,23 @@ module Day2
   global depth 
 
   function main()
-    global horizontal = 0
-    global depth = 0
-    aim = 0
+    local horizontal_l = 0
+    local depth_l = 0
+
+    local aim_l = 0
     for l in eachline("input_day2.txt")
       if l[1] == 'u'
-        aim -= parse(Int,last(l,2))
+        aim_l -= parse(Int,last(l,2))
       elseif l[1] == 'd'
-        aim += parse(Int,last(l,2))
+        aim_l += parse(Int,last(l,2))
       elseif l[1] == 'f'
-        global horizontal += parse(Int,last(l,2))
-        global depth += (aim * parse(Int,last(l,2)))
+        horizontal_l += parse(Int,last(l,2))
+        depth_l += (aim_l * parse(Int,last(l,2)))
       end
     end
+
+    global horizontal = horizontal_l
+    global depth = depth_l
   end
 
   function output()
