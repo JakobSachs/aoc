@@ -5,9 +5,10 @@ using DelimitedFiles
 global winner_score = 0
 global looser_score = 0
 
-function check_winner(record)
+function check_winner(record::Matrix{Int16})
+  :Bool
   for i = 1:size(record, 1)
-    if all(record[i, :] .== 1) || all(record[:, i] .== 1)
+    if record[i, :] == [1,1,1,1,1] || record[:, i] == [1,1,1,1,1]
       return true
     end
   end
@@ -15,17 +16,18 @@ function check_winner(record)
 end
 
 function main()
-  boards, game = readdlm("input_day4.txt", Int16, skipblanks = true, header = true)
+  boards_r, game = readdlm("input_day4.txt", Int16, skipblanks = true, header = true)
 
   # part 1
   game = split(game[1], ',', keepempty = false)
   game = parse.(Int16, game)
 
-  boards = [boards[i:i+4, :] for i = 1:5:size(boards)[1]]
-  record = [zeros(Int16, size(boards[1])[1], size(boards[1])[1]) for i = 1:size(boards)[1]]
+  boards::Vector{Matrix{Int16}} = [boards_r[i:i+4, :] for i = 1:5:size(boards_r)[1]]
+  record::Vector{Matrix{Int16}} = [zeros(Int16, size(boards[1])[1], size(boards[1])[1]) for i = 1:size(boards)[1]]
 
-  winner = -1
-  last_num = -1
+
+  winner::Int16 = -1
+  last_num::Int16 = -1
 
   for n in game
     for (b_idx, b) in enumerate(boards)
@@ -50,7 +52,7 @@ function main()
     end
   end
 
-  score = 0
+  score::Int64 = 0
 
   for x in pairs(IndexCartesian(), boards[winner])
     if record[winner][x[1]] == 0
@@ -63,9 +65,8 @@ function main()
   global winner_score = score
 
   # part 2
-
-  tmp_boards = deepcopy(boards)
-  tmp_record = deepcopy(record)
+  tmp_boards::Vector{Matrix{Int16}} = deepcopy(boards)
+  tmp_record::Vector{Matrix{Int16}} = deepcopy(record)
 
   last_num = -1
   for n in game
@@ -78,7 +79,7 @@ function main()
     end
 
 
-    winners = []
+    winners::Array{Int16} = []
     for (r_idx, r) in enumerate(tmp_record)
       if check_winner(r)
         append!(winners, r_idx)
@@ -100,10 +101,10 @@ function main()
 
   # continue playing for last board
 
-  start_idx = findall(n -> n == last_num, game)[1]
+  start_idx::Int16 = findall(n -> n == last_num, game)[1]
 
-  last_board = tmp_boards[1]
-  last_record = tmp_record[1]
+  last_board::Matrix{Int16} = tmp_boards[1]
+  last_record::Matrix{Int16} = tmp_record[1]
 
   for n in game[start_idx:end]
     for (idx, val) in pairs(IndexCartesian(), last_board)
@@ -118,7 +119,6 @@ function main()
     end
   end
 
-  winner_idx = findfirst(b -> last_board == b, boards)
   score = 0
 
   for x in pairs(IndexCartesian(), last_board)
