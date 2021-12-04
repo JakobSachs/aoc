@@ -2,6 +2,9 @@ module Day4
 
 using DelimitedFiles
 
+global winner_score = 0
+global looser_score = 0
+
 function check_winner(record)
   for i = 1:size(record, 1)
     if all(record[i, :] .== 1) || all(record[:, i] .== 1)
@@ -57,7 +60,7 @@ function main()
 
   score *= last_num
 
-  println("winner board:\t$(winner)\tscore:\t$score")
+  global winner_score = score
 
   # part 2
 
@@ -125,14 +128,13 @@ function main()
   end
 
   score *= last_num
-
-  println("looser board:\t$(winner_idx)\tscore:\t$score")
-
-
-
+  global looser_score = score
 end
 
-function output() end
+function output()
+  println("winner score:\t$winner_score")
+  println("looser score:\t$looser_score")
+end
 end
 
 Day4.main()
