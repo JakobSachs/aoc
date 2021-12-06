@@ -1,17 +1,17 @@
 using BenchmarkTools
 
 for arg in Base.ARGS
-  
+
   if arg == "1"
     # benchmark day 1
     include("./advent-1.jl")
-    using .Day1  
+    using .Day1
     benchmark_d1 = @benchmarkable Day1.main()
     tune!(benchmark_d1)
     println("Benchmark: \n")
     display(median(run(benchmark_d1)))
     println("\ndone!")
-  elseif arg == "2"    
+  elseif arg == "2"
     # benchmark day 2
     include("./advent-2.jl")
     using .Day2
@@ -47,7 +47,15 @@ for arg in Base.ARGS
     println("Benchmark: \n")
     display(median(run(benchmark_d5)))
     println("\ndone!")
-  
+  elseif arg == "6"
+    # benchmark day 6
+    include("./advent-6.jl")
+    using .Day6
+    benchmark_d6 = @benchmarkable Day6.main()
+    tune!(benchmark_d6)
+    println("Benchmark: \n")
+    display(median(run(benchmark_d6)))
+    println("\ndone!")
   end
 
 end
