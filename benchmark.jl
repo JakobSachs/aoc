@@ -30,13 +30,22 @@ for arg in Base.ARGS
     display(median(run(benchmark_d3)))
     println("\ndone!")
   elseif arg == "4"
-    # benchmark day 3
+    # benchmark day 4
     include("./advent-4.jl")
     using .Day4
     benchmark_d4 = @benchmarkable Day4.main()
     tune!(benchmark_d4)
     println("Benchmark: \n")
     display(median(run(benchmark_d4)))
+    println("\ndone!")
+  elseif arg == "5"
+    # benchmark day 5
+    include("./advent-5.jl")
+    using .Day5
+    benchmark_d5 = @benchmarkable Day5.main()
+    tune!(benchmark_d5)
+    println("Benchmark: \n")
+    display(median(run(benchmark_d5)))
     println("\ndone!")
   
   end
