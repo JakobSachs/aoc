@@ -37,7 +37,6 @@ function main()
 
   global overlap_count_simple = count(x -> x >= 2, field)
 
-
   field = zeros(Int16, (1000, 1000))
   for l in readlines("input_day5.txt")
     n_l::Tuple = parse_line(l)
@@ -61,23 +60,21 @@ function main()
 
       if dist[1] > 0
         if dist[2] > 0
-          for i = 0:dist[1]+1
+          for i = 0:abs(dist[1])
             field[n_l[1][1]+i, n_l[1][2]+i] += 1
           end
         else
-          for i = 0:dist[1]+1
+          for i = 0:abs(dist[1])
             field[n_l[1][1]+i, n_l[1][2]-i] += 1
           end
         end
       else
         if dist[2] > 0
-          println("diagonal $n_l diff $dist")
-          for i = 0:dist[1]+1
+          for i = 0:abs(dist[1])
             field[n_l[1][1]-i, n_l[1][2]+i] += 1
           end
         else
-          println("diagonal $n_l diff $dist")
-          for i = 0:dist[1]+1
+          for i = 0:abs(dist[1])
             field[n_l[1][1]-i, n_l[1][2]-i] += 1
           end
         end
