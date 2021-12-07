@@ -1,5 +1,8 @@
 module Day7
 
+using Statistics
+
+
 global fuel_usage_part1 = 0
 global fuel_usage_part2 = 0
 
@@ -7,8 +10,9 @@ function main()
   crab_positions::Array = parse.(Int, split(read("input_day7.txt", String),
     ',', keepempty = false))
 
-  global fuel_usage_part1 = minimum([sum(abs.(crab_positions .- i))
-                                     for i = minimum(crab_positions):maximum(crab_positions)])
+  goal::Int = median(crab_positions)
+
+  global fuel_usage_part1 = sum(abs.(crab_positions .- goal))
   global fuel_usage_part2 = minimum([sum(binomial.(abs.(crab_positions .- i) .+ 1, 2))
                                      for i = minimum(crab_positions):maximum(crab_positions)])
 end
