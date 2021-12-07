@@ -56,6 +56,16 @@ for arg in Base.ARGS
     println("Benchmark: \n")
     display(median(run(benchmark_d6)))
     println("\ndone!")
+  elseif arg == "7"
+    # benchmark day 7
+    include("./advent-7.jl")
+    using .Day7
+    benchmark_d7 = @benchmarkable Day7.main()
+    tune!(benchmark_d7)
+    println("Benchmark: \n")
+    display(median(run(benchmark_d7)))
+    println("\ndone!")
+  
   end
 
 end
