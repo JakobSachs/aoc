@@ -7,7 +7,7 @@ global fuel_usage_part1 = 0
 global fuel_usage_part2 = 0
 
 function main()
-  crab_positions::Array = parse.(Int, split(read("input_day7.txt", String),
+  crab_positions::Array = parse.(Int, split(read(dirname(@__DIR__) * "/data/input_day7.txt", String),
     ',', keepempty = false))
 
   goal::Int = median(crab_positions)

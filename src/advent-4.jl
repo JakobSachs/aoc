@@ -16,7 +16,7 @@ function check_winner(record::Matrix{Int16})
 end
 
 function main()
-  boards_r, game = readdlm("input_day4.txt", Int16, skipblanks = true, header = true)
+  boards_r, game = readdlm(dirname(@__DIR__) * "/data/input_day4.txt", Int16, skipblanks = true, header = true)
 
   # part 1
   game = split(game[1], ',', keepempty = false)

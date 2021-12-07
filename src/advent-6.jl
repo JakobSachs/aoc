@@ -22,7 +22,7 @@ end
 function main()
   fish_ages::Array = zeros(Int128, 8 + 1)
 
-  fish::Array = parse.(Int, split(read("input_day6.txt", String),
+  fish::Array = parse.(Int, split(read(dirname(@__DIR__) * "/data/input_day6.txt", String),
     ',', keepempty = false))
 
   for f in fish

@@ -7,7 +7,7 @@ module Day2
     local depth_l = 0
 
     local aim_l = 0
-    for l in eachline("input_day2.txt")
+    for l in eachline(dirname(@__DIR__) * "/data/input_day2.txt")
       if l[1] == 'u'
         aim_l -= parse(Int,last(l,2))
       elseif l[1] == 'd'

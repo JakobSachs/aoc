@@ -15,7 +15,7 @@ end
 function main()
   field::Matrix = zeros(Int16, (1000, 1000))
 
-  for l in readlines("input_day5.txt")
+  for l in readlines(dirname(@__DIR__) * "/data/input_day5.txt")
     n_l::Tuple = parse_line(l)
     dist = n_l[2] .- n_l[1]
 
@@ -38,7 +38,7 @@ function main()
   global overlap_count_simple = count(x -> x >= 2, field)
 
   field = zeros(Int16, (1000, 1000))
-  for l in readlines("input_day5.txt")
+  for l in readlines(dirname(@__DIR__) * "/data/input_day5.txt")
     n_l::Tuple = parse_line(l)
     dist = n_l[2] .- n_l[1]
 

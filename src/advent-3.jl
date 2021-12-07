@@ -17,7 +17,7 @@ end
 
 function main()
 
-  lines = readlines("input_day3.txt")
+  lines = readlines(dirname(@__DIR__) * "/data/input_day3.txt")
   bits = length(lines[1])
 
   γ_tmp = ""
