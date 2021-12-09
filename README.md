@@ -13,5 +13,6 @@ Anyone that wants to  can join this private leaderboard : `1597512-c0dd3e93`
 |  5  | 3.667 ms   | 5.75 MiB   |
 |  6  | 46.294 μs  | 78.25 KiB  |
 |  7  | 32.093 ms  | 15.26 MiB  |
+|  8  | 12.000 ms  | 13.30 MiB  |
 
 (Measured using `BenchmarkTools.@benchmark`)
