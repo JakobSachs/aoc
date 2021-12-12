@@ -66,7 +66,7 @@ for arg in Base.ARGS
     display(median(run(benchmark_d7)))
     println("\ndone!")
   elseif arg == "8"
-    # benchmark day 7
+    # benchmark day 78
     include("./src/advent-8.jl")
     using .Day8
     benchmark = @benchmarkable Day8.main()
@@ -75,7 +75,7 @@ for arg in Base.ARGS
     display(median(run(benchmark)))
     println("\ndone!")
   elseif arg == "9"
-    # benchmark day 7
+    # benchmark day 9
     include("./src/advent-9.jl")
     using .Day9
     benchmark = @benchmarkable Day9.main()
@@ -84,7 +84,7 @@ for arg in Base.ARGS
     display(median(run(benchmark)))
     println("\ndone!")
   elseif arg == "10"
-    # benchmark day 7
+    # benchmark day 10
     include("./src/advent-10.jl")
     using .Day10
     benchmark = @benchmarkable Day10.main()
