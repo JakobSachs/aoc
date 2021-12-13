@@ -87,8 +87,6 @@ function main()
     end
 
     if length(findall(flashed)) == 100
-      display(flashed)
-      println("sync")
       break
     end
 
@@ -105,7 +103,7 @@ end
 
 function output()
   println("Flashes (after 100 steps):\t$flashes_100")
-  println("Syncronized step:\t$synchronized_step")
+  println("Syncronized step:\t\t$synchronized_step")
 end
 end
 
