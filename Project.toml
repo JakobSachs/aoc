@@ -1,0 +1,10 @@
+name = "aoc21"
+uuid = "b7b1e930-5c37-11ec-bf63-0242ac130002"
+authors = ["Jakob Sachs jakobsachs1999@gmail.com"]
+version = "1.0.0"
+
+[deps]
+DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+PaddedViews = "5432bcbf-9aad-5242-b902-cca2824c8663"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
