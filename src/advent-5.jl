@@ -1,4 +1,4 @@
-module Day5
+module Day
 
 global overlap_count_simple = 0
 global overlap_count_diagonal = 0
@@ -94,5 +94,7 @@ end
 end
 
 
-Day5.main()
-Day5.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

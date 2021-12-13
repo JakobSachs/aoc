@@ -1,4 +1,4 @@
-module Day9
+module Day
 
 global risklevels = 0
 global prod_of_basins = 0
@@ -71,5 +71,7 @@ end
 end
 
 
-Day9.main()
-Day9.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

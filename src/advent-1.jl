@@ -1,4 +1,4 @@
-module Day1
+module Day
 
 function count_increases(arr::Vector)
   count::UInt32 = 0
@@ -29,5 +29,8 @@ function output()
 end
 end
 
-Day1.main()
-Day1.output()
+
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

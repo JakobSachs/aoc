@@ -1,4 +1,4 @@
-module Day7
+module Day
 
 using Statistics
 
@@ -24,5 +24,7 @@ end
 end
 
 
-Day7.main()
-Day7.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

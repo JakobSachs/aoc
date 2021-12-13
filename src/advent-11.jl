@@ -1,6 +1,4 @@
-module Day11
-
-
+module Day
 
 using PaddedViews, DataStructures
 global flashes_100 = 0
@@ -107,6 +105,7 @@ function output()
 end
 end
 
-
-Day11.main()
-Day11.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

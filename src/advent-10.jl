@@ -1,4 +1,4 @@
-module Day10
+module Day
 
 using DataStructures
 
@@ -59,6 +59,7 @@ function output()
 end
 end
 
-
-Day10.main()
-Day10.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

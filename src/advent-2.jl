@@ -1,4 +1,4 @@
-module Day2
+module Day
   global horizontal
   global depth 
 
@@ -28,5 +28,7 @@ module Day2
   end
 end
 
-Day2.main()
-Day2.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

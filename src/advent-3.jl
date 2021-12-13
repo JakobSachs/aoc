@@ -1,4 +1,4 @@
-module Day3
+module Day
 
 global γ, ϵ
 global oxygen_rate, CO2_rate
@@ -77,5 +77,7 @@ function output()
 end
 end
 
-Day3.main()
-Day3.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

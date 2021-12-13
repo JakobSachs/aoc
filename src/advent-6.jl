@@ -1,4 +1,4 @@
-module Day6
+module Day
 
 global fish_amount_80 = 0
 global fish_amount_256 = 0
@@ -49,5 +49,7 @@ end
 end
 
 
-Day6.main()
-Day6.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

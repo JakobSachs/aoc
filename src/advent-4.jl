@@ -1,4 +1,4 @@
-module Day4
+module Day
 
 using DelimitedFiles
 
@@ -137,5 +137,7 @@ function output()
 end
 end
 
-Day4.main()
-Day4.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

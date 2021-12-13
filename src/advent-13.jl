@@ -1,4 +1,4 @@
-module Day13
+module Day
 
 global points_after_first = 0
 global code_dots = []
@@ -19,7 +19,7 @@ function display_field(dots::Vector{Vector{Int}})
   max_y = maximum([d[2] for d in dots])
   max_x = maximum([d[1] for d in dots])
 
-  field = [ [" " for j in 1:max_x+1] for i in 1:max_y+1 ]
+  field = [[" " for j = 1:max_x+1] for i = 1:max_y+1]
 
   for d in dots
     field[d[2]+1][d[1]+1] = "█"
@@ -34,17 +34,17 @@ function display_field(dots::Vector{Vector{Int}})
   println()
 end
 
-function do_fold!(dots::Vector{Vector{Int}}, fold::Tuple{Bool,Int})  
+function do_fold!(dots::Vector{Vector{Int}}, fold::Tuple{Bool,Int})
   if fold[1] # do fold on x axis
     for d in dots
       if d[1] > fold[2]
-        d[1] = 2*fold[2] - d[1]
+        d[1] = 2 * fold[2] - d[1]
       end
     end
   else # do fold on y axis
     for d in dots
       if d[2] > fold[2]
-        d[2] = 2*fold[2] - d[2]
+        d[2] = 2 * fold[2] - d[2]
       end
     end
   end
@@ -62,14 +62,14 @@ function main()
 
   global points_after_first = length(dots)
 
-  for i in 2:length(folds)
-    do_fold!(dots,folds[i])
+  for i = 2:length(folds)
+    do_fold!(dots, folds[i])
   end
 
   global code_dots = dots
 end
 
-function output() 
+function output()
   println("Amount of points after first fold:\t$(points_after_first)")
   println("Code: ")
   display_field(code_dots)
@@ -77,5 +77,7 @@ end
 end
 
 
-Day13.main()
-Day13.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end

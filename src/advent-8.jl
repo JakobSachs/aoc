@@ -1,4 +1,4 @@
-module Day8
+module Day
 
 global counts = []
 global output_sum = 0
@@ -115,5 +115,7 @@ end
 end
 
 
-Day8.main()
-Day8.output()
+if abspath(PROGRAM_FILE) == @__FILE__
+  Day.main()
+  Day.output()
+end
