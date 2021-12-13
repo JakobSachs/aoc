@@ -101,6 +101,25 @@ for arg in Base.ARGS
     println("Benchmark: \n")
     display(median(run(benchmark)))
     println("\ndone!") 
+  elseif arg == "12"
+    # benchmark day 11
+    include("./src/advent-12.jl")
+    using .Day12
+    benchmark = @benchmarkable Day12.main()
+    tune!(benchmark)
+    println("Benchmark: \n")
+    display(median(run(benchmark)))
+    println("\ndone!") 
+  elseif arg == "13"
+    # benchmark day 11
+    include("./src/advent-13.jl")
+    using .Day13
+    benchmark = @benchmarkable Day13.main()
+    tune!(benchmark)
+    println("Benchmark: \n")
+    display(median(run(benchmark)))
+    println("\ndone!") 
+  
   end
 
 
