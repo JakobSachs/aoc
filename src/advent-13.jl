@@ -19,10 +19,10 @@ function display_field(dots::Vector{Vector{Int}})
   max_y = maximum([d[2] for d in dots])
   max_x = maximum([d[1] for d in dots])
 
-  field = [ ["." for j in 1:max_x+1] for i in 1:max_y+1 ]
+  field = [ [" " for j in 1:max_x+1] for i in 1:max_y+1 ]
 
   for d in dots
-    field[d[2]+1][d[1]+1] = "#"
+    field[d[2]+1][d[1]+1] = "█"
   end
 
   for l in field
