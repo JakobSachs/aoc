@@ -6,4 +6,4 @@ Anyone that wants to  can join this private leaderboard : `1597512-c0dd3e93`
 ## Performance
 (Measured using `BenchmarkTools.@benchmark`)
 
-[Benchmarks][benchmarks.md]
+[Benchmarks](benchmarks.md)
