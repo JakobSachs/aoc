@@ -1,5 +1,4 @@
 module Day
-using BenchmarkTools
 
 global count_dif_10 = 0
 global count_dif_40 = 0
